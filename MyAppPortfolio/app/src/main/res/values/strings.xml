@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My App Portfolio</string>
+
+    <string name="activity_portfolio_title">My Nanodegree Apps!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- List of apps -->
+    <string name="activity_portfolio_spotify">SPOTIFY STREAMER</string>
+    <string name="activity_portfolio_scores">SCORES APP</string>
+    <string name="activity_portfolio_library">LIBRARY APP</string>
+    <string name="activity_portfolio_bigger">BUILD IT BIGGER</string>
+    <string name="activity_portfolio_XYZ">XYZ READER</string>
+</resources>
