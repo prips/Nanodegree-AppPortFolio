@@ -7,7 +7,7 @@
 
     <!-- Code font -->
     <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:typeface">monospace</item>
     </style>
@@ -23,7 +23,7 @@
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:typeface">monospace</item>
-        <item name="android:background">#F08C35</item>
+        <item name="android:background">@color/button_background</item>
     </style>
 
 </resources>
