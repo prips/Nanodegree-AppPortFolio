@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMovies</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+
+
+    <string name="TMDB_API_KEY">0dc5ed834762f26ec707247e9e57f196</string>
+    <string name="title_activity_movies_grid">MoviesGridActivity</string>
+</resources>
