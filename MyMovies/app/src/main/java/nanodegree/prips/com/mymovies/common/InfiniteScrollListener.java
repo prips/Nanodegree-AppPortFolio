@@ -1,6 +1,6 @@
 package nanodegree.prips.com.mymovies.common;
 
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 /**
@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
  */
 public class InfiniteScrollListener extends RecyclerView.OnScrollListener {
     private PageConfig mPageConfig;
-    private int mCurrentPage;
+    private int mCurrentPage = 1;
     private int mCurrentTotalItems;
     private int mFirstItemPageIndex;
     private int mFirstVisibleItem = -1;
@@ -28,7 +28,7 @@ public class InfiniteScrollListener extends RecyclerView.OnScrollListener {
 
         int visibleItemCount = recyclerView.getChildCount();
         int totalItemCount = recyclerView.getLayoutManager().getItemCount();
-        mFirstVisibleItem = ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+        mFirstVisibleItem = ((GridLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
 
         if (totalItemCount < mCurrentTotalItems) {
             mCurrentPage = mFirstItemPageIndex;
@@ -47,6 +47,28 @@ public class InfiniteScrollListener extends RecyclerView.OnScrollListener {
                 enableLoading(totalItemCount);
             }
         }
+
+//        int totalItemCount = recyclerView.getLayoutManager().getItemCount();
+//        int lastVisibleItem = ((GridLayoutManager)recyclerView.getLayoutManager()).findLastVisibleItemPosition();
+//        if (!mLoading && totalItemCount <= (lastVisibleItem + mVisibleThreshold)) {
+//            // End has been reached
+//            // Do something
+//            if(mLoadMoreListener!=null) {
+//                //onLoadMoreListener.onLoadMore();
+//                mLoadMoreListener.getNextPageOnScrolled(mPageConfig);
+//                mLoadMoreListener.isLoading(true);
+//            }
+//            mLoading = true;
+//        }
+//        if (mLoading) {
+//            if (totalItemCount >= mCurrentTotalItems) {
+//                disableLoading(totalItemCount);
+//            }
+//        } else {
+//            if ((totalItemCount - visibleItemCount) <= (mFirstVisibleItem)) {
+//                enableLoading(totalItemCount);
+//            }
+//        }
     }
 
     private void disableLoading(int totalItemCount) {
@@ -57,7 +79,8 @@ public class InfiniteScrollListener extends RecyclerView.OnScrollListener {
     }
 
     private void enableLoading(int totalItemCount) {
-        mPageConfig.mLastVisibleItem = totalItemCount - 1;
+       // mPageConfig.mLastVisibleItem = totalItemCount - 1;
+        mPageConfig.mPageNumber = mCurrentPage;
         mLoadMoreListener.getNextPageOnScrolled(mPageConfig);
 
         mLoading = true;

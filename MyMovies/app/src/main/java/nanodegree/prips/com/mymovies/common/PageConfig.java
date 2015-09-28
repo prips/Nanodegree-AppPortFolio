@@ -14,7 +14,7 @@ public class PageConfig {
     public static class Builder extends AbstractBuilder<PageConfig> {
 
         public Builder withPageNumber(int pageNumber) {
-            if(pageNumber < 0){
+            if(pageNumber <= 0){
                 throw new IllegalArgumentException("pageNumber");
             }
 

@@ -1,6 +1,5 @@
 package nanodegree.prips.com.mymovies.model;
 
-import android.net.Uri;
 import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
@@ -73,9 +72,12 @@ public class Movie {
     }
 
     public String getPosterURL(String size) {
-        String posterUrl = POSTER_BASE_URL.concat(size).concat(posterURL);
-        Log.d("Poster URL", posterUrl);
-        return posterUrl;
+        if (posterURL != null) {
+            String posterUrl = POSTER_BASE_URL.concat(size).concat(posterURL);
+            Log.d("Poster URL", posterUrl);
+            return posterUrl;
+        }
+        return null;
     }
 
     public void setPosterURL(String posterURL) {

@@ -3,4 +3,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="item_offset">5dp</dimen>
+    <dimen name="progress_bar_height">80dp</dimen>
+
+    <dimen name="primary_text">14sp</dimen>
+    <dimen name="secondary_text">12sp</dimen>
+    <dimen name="small_text">10sp</dimen>
+    <dimen name="H2_text">20sp</dimen>
+    <dimen name="H3_text">17sp</dimen>
+
+    <!--Toolbar dimens -->
+    <dimen name="header_tall_height">256dp</dimen>
+    <dimen name="movie_details_poster_margin_top">200dp</dimen>
 </resources>
